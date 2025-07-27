@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2a0f0f;
+}
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('/img/firstv.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+  }
+body {
+    margin: 0;
+    background: url('/img/firstv.png') no-repeat center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+.container {
+    width: 50%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    color: rgb(159, 104, 128);
+    background: url('/img/bg.gif') no-repeat center center fixed;
+    background-size: cover;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+label {
+    font-weight: bold;
+    width: 150px;
+    text-align: left;
+}
+input, select {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.gender-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.gender-group input {
+    width: auto;
+}
+.form-group input[type="checkbox"] {
+    width: auto;
+    margin-left: 5px;
+}
+.center-button {
+    text-align: center;
+}
+button {
+    background-color: rgb(201, 140, 166);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+}
+button:hover {
+    background-color: rgb(175, 103, 134);
+}
+.footer {
+    background-color: rgb(173, 91, 127);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}

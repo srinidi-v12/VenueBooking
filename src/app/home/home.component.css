@@ -1,0 +1,86 @@
+.logo {
+    background-image: url('/img/newlogo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 90px;
+    margin-left: 1%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background: url('/img/firstv.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+header {
+    background-color: rgb(173, 91, 127);
+    padding: 20px;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}
+
+nav {
+    background-color: rgb(209, 170, 187);
+    overflow: hidden;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: rgb(158, 92, 120);
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background: rgb(245, 245, 245);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.welcome-message {
+    margin: 20px 0;
+}
+
+.button {
+    display: inline-block;
+    margin: 20px 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: rgb(209, 170, 187);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: rgb(175, 103, 134);
+}
+
+.footer {
+    background-color: rgb(173, 91, 127);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}

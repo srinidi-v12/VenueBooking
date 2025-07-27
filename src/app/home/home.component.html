@@ -1,0 +1,23 @@
+<header style="display: flex; align-items: center; justify-content: center; background-color: rgb(173, 91, 127); padding: 10px 20px; color: white; position: relative;">
+    <div class="logo"></div>
+    <div style="font-size: 25px;"><b>Nia Arenas</b></div>
+</header>   
+
+<nav>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/mybookings">My Bookings</a>
+    <a routerLink="/profile">About</a>
+    <a (click)="logout()">Logout</a>
+</nav>
+
+<div class="container">
+    <h1 class="welcome-message">Welcome to World of Nia Arenas!</h1>
+    <p>Here you can manage your bookings, view available venues, and update your profile information.</p>
+    <button class="button" (click)="navigateToBooking()">Book a Venue</button>
+    <button class="button" (click)="navigateToAvailableVenues()">View Available Venues</button>
+    <button class="button" (click)="navigateToMyBookings()">View My Bookings</button>
+</div>
+
+<div class="footer">
+    &copy; 2025 Venue Booking System. All rights reserved.
+</div>

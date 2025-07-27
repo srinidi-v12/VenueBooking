@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="logo-container" style="text-align: center; margin-bottom: 10px;">
+        <img src="/img/newlogo.png" alt="Logo" style="width: 100px; height: auto;">
+    </div>
+    <h2>Registration Form</h2>
+    <form (ngSubmit)="onSubmit()" #registrationForm="ngForm">
+        <div class="form-group">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" [(ngModel)]="user.fullname" required #fullname="ngModel">
+            <div *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)">
+                <small *ngIf="fullname.errors?.['required']">Full Name is required.</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" [(ngModel)]="user.email" required #email="ngModel" 
+                   email pattern=".+@.+\..+">
+            <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                <small *ngIf="email.errors?.['required']">Email is required.</small>
+                <small *ngIf="email.errors?.['email']">Invalid email format.</small>
+                <small *ngIf="email.errors?.['pattern']">Email must contain a dot and an special symbol.</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" [(ngModel)]="user.username" required #uname="ngModel">
+            <div *ngIf="uname.invalid && (uname.dirty || uname.touched)">
+                <small *ngIf="uname.errors?.['required']">Username is required.</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" [(ngModel)]="user.password" required #password="ngModel">
+            <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                <small *ngIf="password.errors?.['required']">Password is required.</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Gender:</label>
+            <div class="gender-group">
+                <input type="radio" id="male" name="gender" value="male" [(ngModel)]="user.gender" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" [(ngModel)]="user.gender" required>
+                <label for="female">Female</label>
+            </div>
+            <div *ngIf="!user.gender && (registrationForm.submitted)">
+                <small>Gender is required.</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" [(ngModel)]="user.dob" required>
+            <div *ngIf="!user.dob && (registrationForm.submitted)">
+                <small>Date of Birth is required.</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="state">State:</label>
+            <select id="state" name="state" [(ngModel)]="user.state" required>
+                <option value="">Choose</option>
+                <option value="tn">Tamilnadu</option>
+                <option value="kerala">Kerala</option>
+                <option value="karnataka">Karnataka</option>
+                <option value="andhra">Andhra Pradesh</option>
+                <option value="telangana">Telangana</option>
+            </select>
+            <div *ngIf="!user.state && (registrationForm.submitted)">
+                <small>State selection is required.</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Aesthetic:</label>
+            <input type="checkbox" id="chic" name="chic" [(ngModel)]="user.aesthetic.chic">
+            <label for="chic">Chic</label>
+            <input type="checkbox" id="modern" name="modern" [(ngModel)]="user.aesthetic.modern">
+            <label for="modern">Modern</label>
+            <input type="checkbox" id="trad" name="trad" [(ngModel)]="user.aesthetic.trad">
+            <label for="trad">Traditional</label>
+            <input type="checkbox" id="trend" name="trend" [(ngModel)]="user.aesthetic.trend">
+            <label for="trend">Trending</label>
+            <div *ngIf="!(user.aesthetic.chic || user.aesthetic.modern || user.aesthetic.trad || user.aesthetic.trend) && (registrationForm.submitted)">
+                <small>At least one aesthetic option must be selected.</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="profile">Profile Picture:</label>
+            <input type="file" id="profile" name="profile" (change)="onFileChange($event)">
+        </div>
+        <div class="center-button">
+            <button type="submit" [disabled]="!registrationForm.form.valid">Register</button>
+        </div>
+        <div *ngIf="registrationForm.submitted && !registrationForm.valid">
+            <small>Please fill the remaining fields before registering.</small>
+        </div>
+    </form>
+</div>

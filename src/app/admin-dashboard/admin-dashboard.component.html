@@ -1,0 +1,44 @@
+<!-- <p>admin-dashboard works!</p> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+
+    <header style="display: flex; align-items: center; justify-content: center; background-color: rgb(173, 91, 127); padding: 10px 20px; color: white; position: relative;">
+        <div class="logo" style="position: absolute; left: 20px; width: 90px; height: 50px;"></div>
+        <div style="font-size: 30px;"><b>Admin Dashboard</b></div>
+    </header>    
+
+    <div class="container">
+        <div class="dashboard-box">
+            <h3>Manage Bookings</h3>
+            <p>Add, delete, or update bookings.</p>
+            <a routerLink="/manage-bookings">Manage Bookings</a>
+        </div>
+
+        <div class="dashboard-box">
+            <h3>Manage Venues</h3>
+            <p>Add, delete, or update venues.</p>
+            <a routerLink="/manage-venues">Manage Venues</a>
+        </div>
+
+        <div class="dashboard-box">
+            <h3>Profile</h3>
+            <p>Edit your profile information.</p>
+            <a routerLink="/edit-profile">Edit Profile</a>
+        </div>
+
+        <div class="dashboard-box">
+            <h3>Logout</h3>
+            <p>Securely log out from your account.</p>
+            <a routerLink="/welcome">Logout</a>
+        </div>
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+<div>
+    <h2>Manage Venues</h2>
+  
+    <h3>Add Venue</h3>
+    <input type="text" name="venueName" [(ngModel)]="newVenue.name" placeholder="Venue Name" />
+    <input type="text" name="venueDescription" [(ngModel)]="newVenue.description" placeholder="Description" />
+    <input type="text" name="venueImageUrl" [(ngModel)]="newVenue.imageUrl" placeholder="Image URL" />
+    
+    <button (click)="addVenue()">Add Venue</button>
+  
+    <h3>Current Venues</h3>
+    <ul>
+      <li *ngFor="let venue of venues">
+        {{ venue.name }} - {{ venue.description }}
+        <button (click)="deleteVenue(venue._id!)">Delete</button>
+        <button (click)="updateVenue(venue._id!)">Update</button>
+      </li>
+    </ul>
+  
+    <h3>Check Venue Availability</h3>
+    <input type="date" #dateInput />
+    <input type="text" #timeSlotInput placeholder="Time Slot" />
+    <button (click)="checkAvailability(dateInput.value, timeSlotInput.value)">Check Availability</button>
+    <p>{{ message }}</p>
+  </div>
+  
